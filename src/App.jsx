@@ -1,4 +1,4 @@
-import LoginCard from "./components/LoginCard";
+import Chart from "./components/Chart";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/test",
-    element: <LoginCard />,
+    element: <Chart />,
   },
 ]);
 

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import dashboardSVG from "../assets/dashboard.svg";
-import transactionsSVG from "../assets/transactions.svg";
+import transactionSVG from "../assets/transaction.svg";
 import schedulesSVG from "../assets/schedules.svg";
 import userSVG from "../assets/user.svg";
 import settingsSVG from "../assets/settings.svg";
@@ -21,7 +21,7 @@ const SideBar = () => {
             </p>
           </NavLink>
           <NavLink className="flex items-center gap-5">
-            <img src={transactionsSVG} alt="" />
+            <img src={transactionSVG} alt="" />
             <p className="text-white font-montserrat text-lg hover:font-bold">
               Transactions
             </p>
