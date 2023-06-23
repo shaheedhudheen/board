@@ -1,11 +1,26 @@
-import "./App.css";
+import LoginCard from "./components/LoginCard";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/test",
+    element: <LoginCard />,
+  },
+]);
 
 function App() {
-  return (
-    <>
-      <h1 className="text-5xl font-bold underline">Hello world!</h1>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
