@@ -1,6 +1,6 @@
 import searchSVG from "../assets/search.svg";
-import bellSVG from '../assets/bell.svg'
-import profilePic from '../assets/profile.jpg'
+import bellSVG from "../assets/bell.svg";
+import profilePic from "../assets/profile.jpg";
 
 const DashboardNav = () => {
   return (
@@ -9,7 +9,11 @@ const DashboardNav = () => {
 
       <div className="flex gap-6">
         <div className="flex">
-          <input type="text" className="rounded-l-xl" />
+          <input
+            type="text"
+            className="rounded-l-xl px-2 font-normal focus:outline-none "
+            placeholder="Search..."
+          />
           <button className="rounded-r-xl bg-white px-4">
             <img src={searchSVG} alt="" />
           </button>
