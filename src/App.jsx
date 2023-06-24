@@ -1,26 +1,44 @@
 import Chart from "./components/Chart";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/signUp";
 import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
+import SignInPage from "./pages/SignInPage";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AuthContextProvider } from "./utils/AuthContext";
+import Account from "./components/Account";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <SignInPage />,
+    children: [
+      {
+        path: "/",
+        element: <SignIn />,
+      },
+      {
+        path: "register",
+        element: <SignUp />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
     element: <Dashboard />,
   },
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/test",
-    element: <Chart />,
+    path: "/account",
+    element: <Account />,
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthContextProvider>
+      <RouterProvider router={router} />
+    </AuthContextProvider>
+  );
 }
 
 export default App;

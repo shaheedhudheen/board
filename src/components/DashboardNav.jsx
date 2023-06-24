@@ -1,6 +1,7 @@
 import searchSVG from "../assets/search.svg";
 import bellSVG from "../assets/bell.svg";
 import profilePic from "../assets/profile.jpg";
+import { NavLink } from "react-router-dom";
 
 const DashboardNav = () => {
   return (
@@ -19,7 +20,7 @@ const DashboardNav = () => {
           </button>
         </div>
         <img src={bellSVG} alt="" />
-        <img src={profilePic} className="w-8 rounded-full" />
+        <NavLink to={'/account'}><img src={profilePic} className="w-8 rounded-full cursor-pointer" /></NavLink>
       </div>
     </div>
   );

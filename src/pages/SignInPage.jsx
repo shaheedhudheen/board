@@ -1,8 +1,15 @@
 import googleLogo from "../assets/google.svg";
 import appleLogo from "../assets/apple.svg";
-import LoginCard from "../components/LoginCard";
 
-const Login = () => {
+import { signInWithPopup } from "firebase/auth";
+import { useEffect, useState } from "react";
+import { Link, Navigate, Outlet, useLocation } from "react-router-dom";
+
+const SignInPage = () => {
+  const location = useLocation();
+
+  useEffect(() => {}, []);
+
   return (
     <div className="grid grid-cols-3 h-screen">
       <div className="bg-black flex justify-center items-center font-montserrat font-bold text-7xl">
@@ -14,13 +21,17 @@ const Login = () => {
       <div className="bg-[#F5F5F5] col-span-2 flex items-center justify-center">
         <div className="flex gap-7 flex-col">
           <div>
-            <h2 className="text-4xl font-montserrat font-bold">Sign In</h2>
+            <h2 className="text-4xl font-montserrat font-bold">
+              {location.pathname === "/register" ? "Sign Up" : "Sign In"}
+            </h2>
             <p className="font-lato text-base font-normal">
-              Sign in to your account
+              {location.pathname === "/register"
+                ? "Create a New Account"
+                : "Sign in to your account"}
             </p>
           </div>
           <div className="flex gap-6">
-            <div className="flex gap-2 bg-white rounded-[10px] px-4 py-2 items-center cursor-pointer" >
+            <div className="flex gap-2 bg-white rounded-[10px] px-4 py-2 items-center cursor-pointer">
               <img src={googleLogo} alt="google icon" />
               <p className="whitespace-nowrap text-xs font-montserrat text-[#858585]">
                 Sign in with Google
@@ -33,13 +44,19 @@ const Login = () => {
               </p>
             </div>
           </div>
-          <LoginCard />
+          <Outlet />
           <div>
             <p className="text-center">
-              Don’t have an account?{" "}
-              <a href="" className="text-[#346BD4]">
-                Register here
-              </a>
+              {location.pathname === "/register"
+                ? "Already have an account? "
+                : " Don’t have an account?"}
+              <Link
+                to={location.pathname === "/register" ? "/" : "/register"}
+                href=""
+                className="text-[#346BD4]"
+              >
+                {location.pathname === "/register" ? "Sign In" : "Sign Up"}
+              </Link>
             </p>
           </div>
         </div>
@@ -48,4 +65,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignInPage;
