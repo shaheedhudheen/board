@@ -7,6 +7,7 @@ import SignInPage from "./pages/SignInPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AuthContextProvider } from "./utils/AuthContext";
 import Account from "./components/Account";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/account",
-    element: <Account />,
+
+    element: (
+      <ProtectedRoute>
+        <Account />
+      </ProtectedRoute>
+    ),
   },
 ]);
 
