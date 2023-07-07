@@ -1,4 +1,4 @@
-import piePNG from "../assets/pie.png";
+import piePNG from "../assets/Pie.png";
 import down from "../assets/bottom.svg";
 
 
