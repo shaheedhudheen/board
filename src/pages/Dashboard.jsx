@@ -1,10 +1,9 @@
 import Chart from "../components/Chart";
 import DashboardNav from "../components/DashboardNav";
 import SideBar from "../components/SideBar";
-import StatsCard from "../components/statsCard";
+import StatsCard from "../components/StatsCard";
 import Products from "../components/Products";
 import Schedule from "../components/Schedule";
-
 
 const Dashboard = () => {
   return (
@@ -14,10 +13,10 @@ const Dashboard = () => {
       <div className="pl-10">
         <DashboardNav />
         <StatsCard />
-        <Chart/>
+        <Chart />
         <div className="flex gap-16">
-          <Products/>
-          <Schedule/>
+          <Products />
+          <Schedule />
         </div>
       </div>
     </div>
