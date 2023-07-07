@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB0ww2LmZi-BqgOZAMN-MrX0SetZrwipdw",
-  authDomain: "auth-cab22.firebaseapp.com",
-  projectId: "auth-cab22",
-  storageBucket: "auth-cab22.appspot.com",
-  messagingSenderId: "30467137399",
-  appId: "1:30467137399:web:202e9853b0b6a57977cb72",
-  measurementId: "G-6BN43KT4DX",
+  apiKey: "AIzaSyBYpQcRa6UbTvPSStyB73HZVEHtUNYqwNs",
+  authDomain: "board-9a076.firebaseapp.com",
+  projectId: "board-9a076",
+  storageBucket: "board-9a076.appspot.com",
+  messagingSenderId: "795064543852",
+  appId: "1:795064543852:web:bb76a87e240ec258324649",
+  measurementId: "G-C3SC239YC2"
 };
 
 // Initialize Firebase
